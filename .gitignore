@@ -12,4 +12,7 @@ testes/time-debug.txt
 testes/libs/all
 
 temp
-lua
+
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
