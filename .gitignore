@@ -16,3 +16,7 @@ temp
 *.vcxproj
 *.vcxproj.user
 *.vcxproj.filters
+
+# build and intermediate
+bin
+bin-int
