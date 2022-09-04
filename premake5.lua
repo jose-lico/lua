@@ -1,9 +1,12 @@
 project "lua"
 	kind "StaticLib"
 	language "C"
+    configmap {
+        ["ReleaseNoImGui"] = "Release"
+    }
 
-    targetdir ("bin/" .. outputDir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputDir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. outputDir .. "/%{prj.name}")
+	objdir ("%{wks.location}/bin-int/" .. outputDir .. "/%{prj.name}")
 
     files
 	{
@@ -71,21 +74,17 @@ project "lua"
         "lzio.h"
 	}
 
-filter "system:windows"
-	staticruntime "on"
-	systemversion "latest"
+    filter "system:windows"
+        staticruntime "on"
+        systemversion "latest"
 
-filter "system:linux"
-    systemversion "latest"
+    filter "system:linux"
+        systemversion "latest"
 
-filter "configurations:Debug"
-    runtime "Debug"
-    symbols "On"
+    filter "configurations:Debug"
+        runtime "Debug"
+        symbols "On"
 
-filter "configurations:Release"
-    runtime "Release"
-    optimize "On"
-
-filter "configurations:MinSizeRelease"
-    runtime "Release"
-    optimize "On"
+    filter "configurations:Release"
+        runtime "Release"
+        optimize "On"
