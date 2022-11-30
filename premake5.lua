@@ -3,7 +3,7 @@ project "lua"
 	language "C"
 	configmap 
 	{
-		["ReleaseWithInfo"] = "Release"
+		["ReleaseWithInfo"] = "Release",
 		["ReleaseNoImGui"] = "Release"
 	}
 
